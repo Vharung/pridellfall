@@ -1,0 +1,70 @@
+<form class="{{cssClass}}" autocomplete="off">
+    <div id="pj-titre" class="objet">
+        <div class="flexrow">
+            <div class="grid-2col" style="max-width: 134px;">
+                <img src="{{item.img}}" data-edit="img" title="{{item.name}}" height="128" width="128"/>
+            </div>
+            <div class="grid-2col">
+                <h1><input name="name" type="text" value="{{item.name}}" placeholder="Name"/></h1>
+                <h1><input name="surname" type="text" value="{{data.system.surnom}}" placeholder="Surnom"/></h1>
+                <h2>{{localize 'libersf.descri'}}</h2>
+                <textarea name="system.description" style="min-height: 80px">{{data.system.description}}</textarea>
+                <input class="model" name="system.domination" type="text" value="{{data.system.domination}}" placeholder="Controlée par :" style="font-size: 1.2em;text-align: right;"/>
+            </div>
+        </div>
+    </div>  
+    <h2>Niveau :</h2>
+    <div class="flexrow objet">
+        <div class="grid-2col">
+            <label>{{localize 'libersf.arme'}}
+                <input name="system.niveau_arme" type="text" value="{{data.system.niveau_arme}}" placeholder="Arme"/>
+            </label>
+            <label>{{localize 'libersf.crime'}}
+                <input name="system.niveau_crime" type="text" value="{{data.system.niveau_crime}}" placeholder="Crime"/>
+            </label>
+        </div>
+        <div class="grid-2col">
+            <label>{{localize 'libersf.secu'}}
+                <input name="system.niveau_secu" type="text" value="{{data.system.niveau_secu}}" placeholder="Sécurité"/>
+            </label>
+            <label>{{localize 'libersf.techno'}}
+                <input name="system.niveau_tech" type="text" value="{{data.system.niveau_tech}}" placeholder="Technologie"/>
+            </label>
+        </div>
+    </div>
+    <h2>{{localize 'libersf.pop'}} :</h2>
+    <label>
+        <input name="system.pouplation" type="text" value="{{data.system.pouplation}}" placeholder="Nombre d'individu"/>
+    </label>
+    <div class="flexrow objet">
+        
+        <div class="grid-2col">
+            <label>{{localize 'libersf.humain'}}
+                <input name="system.pop_humain" type="text" value="{{data.system.pop_humain}}" placeholder="Humain"/>
+            </label>
+            <label>{{localize 'libersf.arthu'}}
+                <input name="system.pop_arthuriens" type="text" value="{{data.system.pop_arthuriens}}" placeholder="Arthuriens"/>
+            </label>
+            <label>{{localize 'libersf.dragon'}}
+                <input name="system.pop_draconiens" type="text" value="{{data.system.pop_draconiens}}" placeholder="Draconniens"/>
+            </label>
+            <label>{{localize 'libersf.machinev'}}
+                <input name="system.pop_machine" type="text" value="{{data.system.pop_machine}}" placeholder="Machine"/>
+            </label>
+        </div>
+        <div class="grid-2col">
+            <label>{{localize 'libersf.pleiadiens'}}
+                <input name="system.pop_pleiadiens" type="text" value="{{data.system.pop_pleiadiens}}" placeholder="Pleiadiens"/>
+            </label>
+            <label>{{localize 'libersf.yor'}}
+                <input name="system.pop_yoribiens" type="text" value="{{data.system.pop_yoribiens}}" placeholder="Yoribiens"/>
+            </label>
+            <label>{{localize 'libersf.elf'}}
+                <input name="system.pop_elfen" type="text" value="{{data.system.pop_elfen}}" placeholder="Elfen"/>
+            </label>
+            <label>{{localize 'libersf.orqu'}}
+                <input name="system.pop_orquanien" type="text" value="{{data.system.pop_orquanien}}" placeholder="Orquanien"/>
+            </label>
+        </div>
+    </div>
+</form>

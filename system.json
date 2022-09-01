@@ -1,0 +1,37 @@
+{
+    "name": "pridefall",
+    "title": "Pact Pridefall",
+    "description": "The Pact Pridefall system for FoundryVTT !",
+    "version": "0.0.2",
+    "compatibility": {
+      "minimum": "10",
+      "verified": "10.283",
+      "maximum": "10"
+    },
+    "templateVersion": 2,
+    "authors": [
+      {
+        "name": "Vharung",
+        "url": "https://foundryvtt.com"
+      }
+    ],
+    "esmodules": ["module/pridefall.js"],
+    "styles": ["css/pridefall.css"],
+    "scripts": [],
+    "packs": [],
+    "languages": [
+      {
+        "lang": "fr",
+        "name": "Français",
+        "path": "lang/fr.json"
+      }
+    ],
+    "gridDistance": 1,
+    "gridUnits": "m",
+    "primaryTokenAttribute": "PV",
+    "url": "",
+    "manifest": "",
+    "download": "",
+    "license": "LICENSE.txt",
+    "relationships.requires":""
+}
