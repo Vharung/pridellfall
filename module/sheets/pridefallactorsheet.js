@@ -38,9 +38,8 @@ export class pridefallActorSheet extends ActorSheet {
         const inventaire = [];
         const arme = [];
         const armure = [];
-        const piece = [];
+        const consommable = [];
         const argent = [];
-        const sort = [];
         
         // Iterate through items, allocating to containers
         // let totalWeight = 0;
@@ -59,24 +58,20 @@ export class pridefallActorSheet extends ActorSheet {
           else if (i.type === 'objet') {
             inventaire.push(i);
           }
-          else if (i.type === 'piece') {
-            piece.push(i);
+          else if (i.type === 'consommable') {
+            consommable.push(i);
           }
           else if (i.type === 'argent') {
             argent.push(i);
-          }
-          else if (i.type === 'sort') {
-            sort.push(i);
           }
         }
 
         // Assign and return
         actorData.inventaire = inventaire;
         actorData.arme = arme;
-        actorData.piece = piece;
         actorData.armure = armure;
         actorData.argent = argent;
-        actorData.sort = sort;
+        actorData.consommable = consommable;
     }
 
 

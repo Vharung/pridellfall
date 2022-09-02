@@ -14,11 +14,17 @@
     </div>  
     <div class="flexrow objet">
         <div class="grid-2col">
-            <label>{{localize 'libersf.valeur'}}
-                <input name="system.valeur" type="text" value="{{data.system.valeur}}" placeholder="Valeur"/>
+            <label>{{localize 'libersf.type'}}
+                <input name="system.genre" type="text" value="{{data.system.genre}}" placeholder="Type"/>
+            </label>
+            <label>{{localize 'libersf.pds'}}
+                <input name="system.poids" type="text" value="{{data.system.poids}}" placeholder="Poids"/>
             </label>
         </div>
         <div class="grid-2col">
+            <label>{{localize 'libersf.valeur'}}
+                <input name="system.valeur" type="text" value="{{data.system.valeur}}" placeholder="Valeur"/>
+            </label>
             <label>{{localize 'libersf.qte'}}
                 <input name="system.quantite" type="text" value="{{data.system.quantite}}" placeholder="Valeur"/>
             </label>
