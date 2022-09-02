@@ -40,6 +40,8 @@ export class pridefallActorSheet extends ActorSheet {
         const armure = [];
         const consommable = [];
         const argent = [];
+        const sort = [];
+        const race = [];
         
         // Iterate through items, allocating to containers
         // let totalWeight = 0;
@@ -64,6 +66,12 @@ export class pridefallActorSheet extends ActorSheet {
           else if (i.type === 'argent') {
             argent.push(i);
           }
+          else if (i.type === 'sort') {
+            sort.push(i);
+          }
+          else if (i.type === 'race') {
+            race.push(i);
+          }
         }
 
         // Assign and return
@@ -72,6 +80,8 @@ export class pridefallActorSheet extends ActorSheet {
         actorData.armure = armure;
         actorData.argent = argent;
         actorData.consommable = consommable;
+        actorData.sort = sort;
+        actorData.race = race;
     }
 
 
@@ -134,111 +144,7 @@ export class pridefallActorSheet extends ActorSheet {
         
 
 
-        //calcul point restant
-        var clanliste=html.find('.raceliste').val();
-        var metierliste=html.find('.metierliste').val();
-        var metier=html.find('.metier').val();
-        var race=html.find('.race').val();
-        var ptrestant=html.find('.pointrestant').val();
-        var level=html.find('.niveau').val();
-        if(level==undefined){
-            var ptrestant2=html.find('.pointrestant2').val();
-            var resultat=parseInt(ptrestant2);
-        }else {
-            var resultat=-20-((parseInt(level)-1)*10); 
-        }
-        var min=-20;
-        for(i=0;i<26;i++){
-            if(race=="Humain" && i==6){
-                var controle= html.find('.cpt'+i).val();
-                if(controle<min){
-                    html.find('.cpt'+i).val(min);
-                }
-            }else if(race=="Arthuriens" && i==4){
-                var controle= html.find('.cpt'+i).val();
-                if(controle<min){
-                    html.find('.cpt'+i).val(min);
-                }
-            }else if(race=="Alpha Draconiens" && i==9){
-                var controle= html.find('.cpt'+i).val();
-                if(controle<min){
-                    html.find('.cpt'+i).val(min);
-                }
-            }else if(race=="Machine" && i==19){
-                var controle= html.find('.cpt'+i).val();
-                if(controle<min){
-                    html.find('.cpt'+i).val(min);
-                }
-            }else if(race=="Pleiadiens" && i==20){
-                var controle= html.find('.cpt'+i).val();
-                if(controle<min){
-                    html.find('.cpt'+i).val(min);
-                }
-            }else if(race=="Yoribiens" && i==17){
-                var controle= html.find('.cpt'+i).val();
-                if(controle<min){
-                    html.find('.cpt'+i).val(min);
-                }
-            }else if(race=="Elfen" && i==0){
-                var controle= html.find('.cpt'+i).val();
-                if(controle<min){
-                    html.find('.cpt'+i).val(min);
-                }
-            }else if(race=="Orquanien" && i==3){
-                var controle= html.find('.cpt'+i).val();
-                if(controle<min){
-                    html.find('.cpt'+i).val(min);
-                }
-            }
-            if(metier=="Artisans" && i==1){
-                var controle= html.find('.cpt'+i).val();
-                if(controle<min){
-                    html.find('.cpt'+i).val(min);
-                }
-            }else if(metier=="Commerce" && i==16){
-                var controle= html.find('.cpt'+i).val();
-                if(controle<min){
-                    html.find('.cpt'+i).val(min);
-                }
-            }else if(metier=="Colon" && i==23){
-                var controle= html.find('.cpt'+i).val();
-                if(controle<min){
-                    html.find('.cpt'+i).val(min);
-                }
-            }else if(metier=="Intellectuel" && i==10){
-                var controle= html.find('.cpt'+i).val();
-                if(controle<min){
-                    html.find('.cpt'+i).val(min);
-                }
-            }else if(metier=="Malandrins" && i==8){
-                var controle= html.find('.cpt'+i).val();
-                if(controle<min){
-                    html.find('.cpt'+i).val(min);
-                }
-            }else if(metier=="Pilote" && i==18){
-                var controle= html.find('.cpt'+i).val();
-                if(controle<min){
-                    html.find('.cpt'+i).val(min);
-                }
-            }else if(metier=="Médecin" && i==13){
-                var controle= html.find('.cpt'+i).val();
-                if(controle<min){
-                    html.find('.cpt'+i).val(min);
-                }
-            }else if(metier=="Militaire" && i==24){
-                var controle= html.find('.cpt'+i).val();
-                if(controle<min){
-                    html.find('.cpt'+i).val(min);
-                }
-            }else if(metier=="Mécanicien" && i==12){
-                var controle= html.find('.cpt'+i).val();
-                if(controle<min){
-                    html.find('.cpt'+i).val(min);
-                }
-            }
-            var valor=parseInt(html.find('.cpt'+i).val());
-            resultat=resultat+valor;
-        }
+        //couleur compétence
         $( ".features input" ).each(function( index ) {
           var valor= $( this ).val();
           if(valor==0){
@@ -249,51 +155,8 @@ export class pridefallActorSheet extends ActorSheet {
             $( this ).css({"background":"#a51b1b","color": "white"});
           }
         });
-        if(level==undefined){
-            resultat=resultat;
-        }else {
-            var hpmax=html.find('.hpmax').val();
-            var pointhp=(parseInt(hpmax)-20)*2;
-            resultat=resultat+pointhp; 
-        }
         
-        html.find('.pointrestant').val(resultat);
 
-
-
-/*Couleur bar*/
-        html.find( ".refbar" ).each(function( index ) {
-          var pc=$( this ).val();
-          var name=$( this ).attr('data-zone');
-          var z=0;var t='';
-          if(name=="tete"){
-            z=1;t='t';
-          } else if(name=="torse"){
-            z=2;t='to';
-          } else if(name=="bd"){
-            z=3;t='tbd';
-          } else if(name=="bg"){
-            z=4;t='tbg';
-          } else if(name=="jd"){
-            z=5;t='tjd';
-          } else if(name=="jg"){
-            z=6;t='tjg';
-          }
-          pc=(10-parseInt(pc))*10;
-          if(pc>'60'){
-            $('.zone.'+name+' .bar').css({'background':'green','width':pc+'%'});
-            $('.z'+z).css({'background':' url(systems/pridefallsf/assets/icon/'+t+'1.png) center center no-repeat'});
-          }else if(pc>'30'){
-            $('.zone.'+name+' .bar').css({'background':'orange','width':pc+'%'});
-            $('.z'+z).css({'background':' url(systems/pridefallsf/assets/icon/'+t+'2.png) center center no-repeat'});
-          }else if(pc<=0){
-            $('.zone.'+name+' .bar').css({'background':'black','width':pc+'%'});
-            $('.z'+z).css({'background':' url(systems/pridefallsf/assets/icon/'+t+'0.png) center center no-repeat'});
-          }else{
-            $('.zone.'+name+' .bar').css({'background':'red','width':pc+'%'});
-            $('.z'+z).css({'background':' url(systems/pridefallsf/assets/icon/'+t+'3.png) center center no-repeat'});
-          }
-        });
 
 /*Poids encombrement*/
         var poids=[];

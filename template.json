@@ -173,7 +173,9 @@
             "bouclier",
             "objet",
             "consommable",
-            "argent"
+            "argent",
+            "sort",
+            "race"
         ],
         "arme": {
             "description": "",
@@ -229,6 +231,19 @@
             "techno":"☆ ☆ ☆ ☆ ☆",
             "quantite":"1",
             "valeur": "" 
+        },
+        "sort": {
+            "description": "",
+            "genre": "",
+            "degats": "",
+            "portee": "",
+            "poids":"1",
+            "techno":"☆ ☆ ☆ ☆ ☆",
+            "valeur":"1",
+            "quantite":"1"
+        },
+        "race": {
+            "description": ""
         }
     }
 }
