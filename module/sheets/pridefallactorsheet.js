@@ -264,61 +264,9 @@ export class pridefallActorSheet extends ActorSheet {
         
         html.find('.pointrestant').val(resultat);
 
-        /*Avantage*/
-        var avant=html.find('.avant').val();
-        var desan=html.find('.desan').val();
-        var solit=html.find('.solit').val();
-        if(avant>0){
-            html.find('.avant').css("opacity", "1");
-        }else {
-            html.find('.avant').css("opacity", "0.5");
-        }
-        if(desan>0){
-            html.find('.desan').css("opacity", "1");
-        }else {
-            html.find('.desan').css("opacity", "0.5");
-        }
-        if(solit>0){
-            html.find('.solit').css("opacity", "1");
-        }else {
-            html.find('.solit').css("opacity", "0.5");
-        }
-
-        //caractere aléatoire
-        html.find('.generator').click(this._onStory2.bind(this));
-        html.find('.caractergen').click(this._onStory.bind(this))
-        html.find('.aleatoire').click(this._onAleatoire.bind(this))
-
-        /*Ancienté*/
-        var ancien=html.find('.model').val();
-        var etoile="☆ ☆ ☆ ☆ ☆"
-        if(ancien=="Antiquité : ✬ ☆ ☆ ☆ ☆"){etoile="✬ ☆ ☆ ☆ ☆"}
-        else if(ancien=="Obsolette : ★ ☆ ☆ ☆ ☆"){etoile="★ ☆ ☆ ☆ ☆"}
-        else if(ancien=="Dépasser : ★ ✬ ☆ ☆ ☆"){etoile="★ ✬ ☆ ☆ ☆"}
-        else if(ancien=="Ancien  : ★ ★ ☆ ☆ ☆"){etoile="★ ★ ☆ ☆ ☆"}
-        else if(ancien=="Standard  : ★ ★ ✬ ☆ ☆"){etoile="★ ★ ✬ ☆ ☆"}
-        else if(ancien=="Récent  : ★ ★ ★ ☆ ☆"){etoile="★ ★ ★ ☆ ☆"}
-        else if(ancien=="Moderne : ★ ★ ★ ✬ ☆"){etoile="★ ★ ★ ✬ ☆"}
-        else if(ancien=="Avant-gardiste  : ★ ★ ★ ★ ☆"){etoile="★ ★ ★ ★ ☆"}
-        else if(ancien=="Futuriste : ★ ★ ★ ★ ✬"){etoile="★ ★ ★ ★ ✬"}
-        else if(ancien=="Prototype : ★ ★ ★ ★ ★"){etoile="★ ★ ★ ★ ★"}
-        html.find('.etoile').html(etoile);
 
 
-        /*Etat*/
-        html.find('.action6').click(this._onCouv.bind(this));
-        html.find('.chnget').click(this._onCouv.bind(this));
-        html.find('.vehichoix').click(this._onVehi.bind(this));
-
-
-        //+1 action si dext et agilité >30
-        var agi=html.find('.cpt0').val();
-        var dex=html.find('.cpt6').val();
-        if(agi >=30 && dex >=30){
-            html.find('.titreaction').html(game.i18n.localize("pridefallsf.action2"))
-        }
-
-        //couleur bar
+/*Couleur bar*/
         html.find( ".refbar" ).each(function( index ) {
           var pc=$( this ).val();
           var name=$( this ).attr('data-zone');
@@ -352,7 +300,7 @@ export class pridefallActorSheet extends ActorSheet {
           }
         });
 
-        /*Poids encombrement*/
+/*Poids encombrement*/
         var poids=[];
         var quantite=[];
         var total=0;
@@ -390,7 +338,7 @@ export class pridefallActorSheet extends ActorSheet {
 
         
 
-        /*Ajout Bonus*/
+/*Ajout Bonus*/
         $('.attribut').on('click',function(){
             var bonusactor=$(this).attr('name');
             html.find(".bonusactor").val(bonusactor);            
@@ -458,23 +406,27 @@ export class pridefallActorSheet extends ActorSheet {
     }
 
     _onRoll(event){
-        let maxstat = event.target.dataset["attdice"];
-
         var name = event.target.dataset["name"];
-        var arme ='';
-        var chargequi='';
-        const jetdeDesFormule = "1d100";
+        let comp = event.target.dataset["attdice"];
+        let base = event.target.dataset["comp"];
+
+
+        const jetdeDesFormule = "1d10+"+base+'+'+comp;
         var bonus =this.actor.malus;
         var critique=5;
         var conf="auto";
         if(bonus=='' || bonus ==undefined || bonus==null){
             bonus=0;
         }
+        var inforesult="";
+        var succes="";
+        /*resultat
         let inforesult=parseInt(maxstat)+parseInt(bonus)+30;
         if(inforesult>95){
             inforesult=95;
         }
-
+        */
+        /*gestion des munition
         if(name=="Tir" || name=="Tircouv"){
             if(name=="Tir"){var conf="none;width: 200px;";}
             arme = event.target.dataset["armed"];
@@ -502,13 +454,13 @@ export class pridefallActorSheet extends ActorSheet {
                   });
                 return;
             } 
-        }
-        let r = new Roll("1d100");
+        }*/
+        let r = new Roll(jetdeDesFormule);
         var roll=r.evaluate({"async": false});
         var deg='';
         var perte=0;
         let retour=r.result; var succes="";
-        if(name=="Tircouv"){
+        /*if(name=="Tircouv"){
             var arme = event.target.dataset["armed"];
             perte=10;
             if(retour>95){
@@ -579,7 +531,7 @@ export class pridefallActorSheet extends ActorSheet {
     
         if(inforesult<=0){
             succes="<h4 class='resultat' style='background:#ff3333;'>Echec critique</h4>";
-        }
+        }*/
         const texte = '<span style="flex:'+conf+'"><p style="text-align: center;font-size: medium;background: #6a7885;padding: 5px;color: white;">Jet de ' + name + " : " + jetdeDesFormule +" - " + inforesult + '</p>'+ succes+'</span>'+deg;
         //roll.roll().toMessage({
         roll.toMessage({

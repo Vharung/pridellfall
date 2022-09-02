@@ -1,7 +1,7 @@
 {
-    "name": "pridefall",
-    "title": "Pact Pridefall",
-    "description": "The Pact Pridefall system for FoundryVTT !",
+    "id": "pridefall",
+    "title": "REDAWN",
+    "description": "The REDAWN system for FoundryVTT !",
     "version": "0.0.2",
     "compatibility": {
       "minimum": "10",
