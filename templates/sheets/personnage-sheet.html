@@ -11,13 +11,13 @@
 					<input class="nomperso" name="name" type="text" value="{{actor.name}}" placeholder="Name"/>
 					<div class="rexrow">
 						<div class="grid-3col">			
-							<p>{{localize 'libersf.race'}} : <input class="race" type="text" value="{{data.system.race}}" placeholder="Race"/></p>
+							<p>{{localize 'libersf.race'}} : <input class="race" type="text" name="system.race" value="{{data.system.race}}" placeholder="Race"/></p>
 						</div>
 						<div class="grid-3col">
-							<p>{{localize 'libersf.metier'}} : <input class="metier" type="text" value="{{data.system.metier}}" placeholder="Métier" /></p>
+							<p>{{localize 'libersf.metier'}} : <input class="metier" type="text" name="system.metier" value="{{data.system.metier}}" placeholder="Métier" /></p>
 						</div>
 						<div class="grid-3col">
-							<p>{{localize 'libersf.faction'}} : <input class="faction" type="text" value="{{data.system.religion}}" placeholder="Faction"/></p>
+							<p>{{localize 'libersf.faction'}} : <input class="faction" type="text" name="system.religion" value="{{data.system.religion}}" placeholder="Faction"/></p>
 						</div>
 						<!--div class="separator"></div-->
 						{{localize 'libersf.level'}} : <input class="niveau" name="system.level" type="text" value="{{data.system.level}}" placeholder="1"/></p>
