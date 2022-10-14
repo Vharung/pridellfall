@@ -71,32 +71,36 @@
 			    {{!-- Features Tab --}}
 				<div id="features" class="tab features"  data-group="primary" data-tab="features">
 
-					<h2 style="text-align: center;">{{localize 'libersf.base30'}}</h2>
+					
 					<div class="compt"><button class="jetdedes" data-name="Armes à feu" data-comp="{{data.system.stat2}}" data-attDice="{{data.system.Agilité}}">{{localize 'libersf.agil'}}</button>
 					<input class="cpt0" name="system.Agilité" type="text" value="{{data.system.Agilité}}" placeholder="{{data.system.Agilité}}" style="text-align: center"/>
 					</div>
 					<div class="compt"><button class="jetdedes" data-name="Armes exotiques" data-comp="{{data.system.stat2}}" data-attDice="{{data.system.Artisanat}}" title="Construire / Réparer Objet">{{localize 'libersf.arti'}}*</button>
 					<input class="cpt1" name="system.Artisanat" type="text" value="{{data.system.Artisanat}}" placeholder="{{data.system.Artisanat}}" style="text-align: center"/>
 					</div>
-					<div class="compt"><button class="jetdedes" data-name="Athlétisme" data-comp="{{data.system.stat3}}" data-attDice="{{data.system.Balistique}}" title="Réparer les armes / Fabriquer munition">{{localize 'libersf.bali'}}*</button>
+					<div class="compt"><button class="jetdedes" data-name="Athlétisme" data-comp="{{data.system.stat1}}" data-attDice="{{data.system.Balistique}}" title="Réparer les armes / Fabriquer munition">{{localize 'libersf.bali'}}*</button>
 					<input class="cpt2" name="system.Balistique" type="text" value="{{data.system.Balistique}}" placeholder="{{data.system.Balistique}}" style="text-align: center"/>
 					</div>
-					<div class="compt"><button class="jetdedes" data-name="Biotech" data-comp="" data-attDice="{{data.system.Combat}}">{{localize 'libersf.comb'}}</button>
+					<div class="compt"><button class="jetdedes" data-name="Biotech" data-comp="{{data.system.stat3}}" data-attDice="{{data.system.Combat}}">{{localize 'libersf.Biot'}}</button>
+					<input class="cpt3" name="system.Biotech" type="text" value="{{data.system.Biotech}}" placeholder="{{data.system.Combat}}" style="text-align: center"/>
+					</div>
+
+					<div class="compt"><button class="jetdedes" data-name="Combat rapproché" data-comp="{{data.system.stat1}}" data-attDice="{{data.system.Combat}}">{{localize 'libersf.comb'}}</button>
 					<input class="cpt3" name="system.Combat" type="text" value="{{data.system.Combat}}" placeholder="{{data.system.Combat}}" style="text-align: center"/>
 					</div>
-					<div class="compt"><button class="jetdedes" data-name="Combat rapproché" data-comp="{{data.system.stat2}}" data-attDice="{{data.system.ConGén}}">{{localize 'libersf.cong'}}</button>
+					<div class="compt"><button class="jetdedes" data-name="Conduite" data-comp="{{data.system.stat2}}" data-attDice="{{data.system.ConGén}}">{{localize 'libersf.cong'}}</button>
 					<input class="cpt4" name="system.ConGén" type="text" value="{{data.system.ConGén}}" placeholder="{{data.system.ConGén}}" style="text-align: center"/>
 					</div>
-					<div class="compt"><button class="jetdedes" data-name="Conduite" data-comp="{{data.system.stat2}}" data-attDice="{{data.system.ConSpécif}}">{{localize 'libersf.comp'}}</button>
+					<div class="compt"><button class="jetdedes" data-name="Électronique" data-comp="{{data.system.stat3}}" data-attDice="{{data.system.ConSpécif}}">{{localize 'libersf.comp'}}</button>
 					<input class="cpt5" name="system.ConSpécif" type="text" value="{{data.system.ConSpécif}}" placeholder="{{data.system.ConSpécif}}" style="text-align: center"/>
 					</div>
-					<div class="compt"><button class="jetdedes" data-name="Électronique" data-comp="{{data.system.stat3}}" data-attDice="{{data.system.Dextérité}}">{{localize 'libersf.dext'}}</button>
+					<div class="compt"><button class="jetdedes" data-name="Escroquerie" data-comp="{{data.system.stat3}}" data-attDice="{{data.system.Dextérité}}">{{localize 'libersf.dext'}}</button>
 					<input class="cpt6" name="system.Dextérité" type="text" value="{{data.system.Dextérité}}" placeholder="{{data.system.Dextérité}}" style="text-align: center"/>
 					</div>
-					<div class="compt"><button class="jetdedes" data-name="Escroquerie" data-comp="{{data.system.stat3}}" data-attDice="{{data.system.Diplomatie}}">{{localize 'libersf.dipl'}}</button>
+					<div class="compt"><button class="jetdedes" data-name="Force brute" data-comp="{{data.system.stat1}}" data-attDice="{{data.system.Diplomatie}}">{{localize 'libersf.dipl'}}</button>
 					<input class="cpt7" name="system.Diplomatie" type="text" value="{{data.system.Diplomatie}}" placeholder="{{data.system.Diplomatie}}" style="text-align: center"/>
 					</div>
-					<div class="compt"><button class="jetdedes" data-name="Force brute" data-comp="{{data.system.stat1}}" data-attDice="{{data.system.Discrétion}}">{{localize 'libersf.disc'}}</button>
+					<div class="compt"><button class="jetdedes" data-name="Discrétion" data-comp="{{data.system.stat2}}" data-attDice="{{data.system.Discrétion}}">{{localize 'libersf.disc'}}</button>
 					<input class="cpt8" name="system.Discrétion" type="text" value="{{data.system.Discrétion}}" placeholder="{{data.system.Discrétion}}" style="text-align: center"/>
 					</div>
 					<div class="compt"><button class="jetdedes" data-name="Furtivité" data-comp="{{data.system.stat2}}" data-attDice="{{data.system.Force}}">{{localize 'libersf.forc'}}</button>
@@ -105,25 +109,25 @@
 					<div class="compt"><button class="jetdedes" data-name="Influence" data-comp="{{data.system.stat3}}" data-attDice="{{data.system.Investigation}}">{{localize 'libersf.inve'}}</button>
 					<input class="cpt10" name="system.Investigation" type="text" value="{{data.system.Investigation}}" placeholder="{{data.system.Investigation}}" style="text-align: center"/>
 					</div>
-					<div class="compt"><button class="jetdedes" data-name="Jeu" data-comp="" data-attDice="{{data.system.Jeu}}">{{localize 'libersf.ajeu'}}</button>
+					<div class="compt"><button class="jetdedes" data-name="Ingénierie" data-comp="{{data.system.stat3}}" data-attDice="{{data.system.Jeu}}">{{localize 'libersf.ajeu'}}</button>
 					<input class="cpt11" name="system.Jeu" type="text" value="{{data.system.Jeu}}" placeholder="{{data.system.Jeu}}" style="text-align: center"/>
 					</div>
-					<div class="compt"><button class="jetdedes" data-name="Ingénierie" data-comp="{{data.system.stat3}}" data-attDice="{{data.system.Mécanique}}" title="Réparer Véhicule">{{localize 'libersf.meca'}}*</button>
+					<div class="compt"><button class="jetdedes" data-name="Investigation" data-comp="{{data.system.stat3}}" data-attDice="{{data.system.Mécanique}}" title="Réparer Véhicule">{{localize 'libersf.meca'}}*</button>
 					<input class="cpt12" name="system.Mécanique" type="text" value="{{data.system.Mécanique}}" placeholder="{{data.system.Mécanique}}" style="text-align: center"/>
 					</div>
-					<div class="compt"><button class="jetdedes" data-name="Perception" data-comp="{{data.system.stat4}}" data-attDice="{{data.system.Médecine}}">{{localize 'libersf.mede'}}</button>
+					<div class="compt"><button class="jetdedes" data-name="Pilotage" data-comp="{{data.system.stat3}}" data-attDice="{{data.system.Médecine}}">{{localize 'libersf.mede'}}</button>
 					<input class="cpt13" name="system.Médecine" type="text" value="{{data.system.Médecine}}" placeholder="{{data.system.Médecine}}" style="text-align: center"/>
 					</div>
-					<div class="compt"><button class="jetdedes" data-name="Pilotage" data-comp="{{data.system.stat3}}" data-attDice="{{data.system.Natation}}">{{localize 'libersf.nata'}}</button>
+					<div class="compt"><button class="jetdedes" data-name="Piratage" data-comp="{{data.system.stat3}}" data-attDice="{{data.system.Natation}}">{{localize 'libersf.nata'}}</button>
 					<input class="cpt14" name="system.Natation" type="text" value="{{data.system.Natation}}" placeholder="{{data.system.Natation}}" style="text-align: center"/>
 					</div>
-					<div class="compt"><button class="jetdedes" data-name="Piratage" data-comp="{{data.system.stat3}}" data-attDice="{{data.system.Navigation}}">{{localize 'libersf.navi'}}</button>
+					<div class="compt"><button class="jetdedes" data-name="Plein air" data-comp="{{data.system.stat4}}" data-attDice="{{data.system.Navigation}}">{{localize 'libersf.navi'}}</button>
 					<input class="cpt15" name="system.Navigation" type="text" value="{{data.system.Navigation}}" placeholder="{{data.system.Navigation}}" style="text-align: center"/>
 					</div>
-					<div class="compt"><button class="jetdedes" data-name="Plein air" data-comp="{{data.system.stat4}}" data-attDice="{{data.system.Négociation}}">{{localize 'libersf.nego'}}</button>
+					<div class="compt"><button class="jetdedes" data-name="Psionique" data-comp="{{data.system.stat4}}" data-attDice="{{data.system.Négociation}}">{{localize 'libersf.nego'}}</button>
 					<input class="cpt16" name="system.Négociation" type="text" value="{{data.system.Négociation}}" placeholder="{{data.system.Négociation}}" style="text-align: center"/>
 					</div>
-					<div class="compt"><button class="jetdedes" data-name="Psionique" data-comp="{{data.system.stat4}}" data-attDice="{{data.system.Perception}}">{{localize 'libersf.perc'}}</button>
+					<div class="compt"><button class="jetdedes" data-name="Perception" data-comp="{{data.system.stat4}}" data-attDice="{{data.system.Perception}}">{{localize 'libersf.perc'}}</button>
 					<input class="cpt17" name="system.Perception" type="text" value="{{data.system.Perception}}" placeholder="{{data.system.Perception}}" style="text-align: center"/>
 					</div>
 					<div class="clear"></div>	
