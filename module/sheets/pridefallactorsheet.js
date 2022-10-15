@@ -547,11 +547,11 @@
         if(genre=="arme" ){
             var degat=event.target.dataset["degat"]; 
             this.actor.update({'system.degatd': degat,'system.armed':objetaequipe});
-        }else if(genre=="Armure"  || genre=="Combinaison"){
+        }else if(genre=="Armure"  || genre=="Combinaison" || genre=="Vetement"){
             var hp=event.target.dataset["hp"]; 
             var hpmax=event.target.dataset["hpmax"]; 
-            this.actor.update({'system.armure.value': hp,'system.armure.max': hpmax,'system.prog':objetaequipe});
-        }else if(genre=="Champ de force"){
+            this.actor.update({'system.armure.value': hp,'system.armure.max': hp,'system.prog':objetaequipe});
+        }else if(genre=="Champ de force" || genre=="Bouclier"){
             var hp=event.target.dataset["hp"]; 
             var hpmax=event.target.dataset["hpmax"]; 
             this.actor.update({'system.protections.value': hp,'system.protections.max': hpmax,'system.prod':objetaequipe});

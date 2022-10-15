@@ -33,6 +33,8 @@
                 "bg":0,
                 "jd":0,
                 "jg":0,
+                "def":0,
+                "rap":0,
                 "encombrement": {
                   "value": 0,
                   "max": 0

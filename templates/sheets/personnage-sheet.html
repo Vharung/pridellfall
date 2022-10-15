@@ -37,7 +37,10 @@
 				</div>
 				<div class="grid-2col">
 					<p><span class="deno">⛉ {{localize 'libersf.armure'}}</span><input class="actarmmax" name="system.armure.max" type="text" value="{{data.system.armure.max}}" placeholder="0"/>
-					<span class="deno">⛉ {{localize 'libersf.bouclier'}}</span><input  class="actboumax" name="system.protections.max" type="text" value="{{data.system.protections.max}}" placeholder="0"/></p>
+					<span class="deno">⛉ {{localize 'libersf.bouclier'}}</span><input  class="actboumax" name="system.protections.max" type="text" value="{{data.system.protections.max}}" placeholder="0"/>
+
+					<span class="deno">⛉ {{localize 'libersf.def'}}</span><input  class="actboumax" name="system.def" type="text" value="{{data.system.def}}" placeholder="0"/>
+					<span class="deno">⛉ {{localize 'libersf.rap'}}</span><input  class="actboumax" name="system.rap" type="text" value="{{data.system.rap}}" placeholder="0"/></p>
 				</div>
 				<div class="clear"></div>
 				<div class="grid-4col">
@@ -249,7 +252,7 @@
 			                    <div class="item-techno">{{item.system.techno}}</div>
 			                    <div class="item-qt">{{item.system.quantite}}</div>
 			                    <div class="item-controls">
-			                    	<span class="item-equip" title="Equipé armure" genre="{{item.system.genre}}" name="{{item.name}}" data-name="{{item.name}}" data-genre="{{item.system.genre}}"  data-name="{{item.name}}" data-hpmax="{{item.system.hp.max}}" data-hp="{{item.system.resitance}}">+</span>
+			                    	<span class="item-equip" title="Equipé armure" genre="{{item.system.genre}}" name="{{item.name}}" data-name="{{item.name}}" data-genre="{{item.system.genre}}"  data-name="{{item.name}}" data-hpmax="{{item.system.resitance}}" data-hp="{{item.system.resitance}}">+</span>
 			                    	<a class="item-control item-desc" title="Desc Sort">&#128712;</a>
 			                        <a class="item-control item-edit" title="Edit Item"><i class="fas fa-edit"></i></a>
 			                        <a class="item-control item-delete" title="Delete Item"><i class="fas fa-trash"></i></a>
@@ -259,7 +262,7 @@
 			                </li>
 			            {{/each}}
 		        		</ol>
-		        		<h2 style="margin-top: 20px">{{localize 'libersf.inv2'}} <a class="item-control item-create" title="Create Item" data-type="objet" style="float: right;"><i class="fas fa-plus"></i></a></h2>
+		        		<h2 style="margin-top: 20px">{{localize 'libersf.inv2'}} <a class="item-control item-create" title="Create Item" data-type="consommable" style="float: right;"><i class="fas fa-plus"></i></a></h2>
 						<ol class="items-list">
 			                <li class="item rexrow item-header">
 			                  <div class="item-image"></div>
