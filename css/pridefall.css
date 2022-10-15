@@ -2,7 +2,7 @@
 .pridefall .window-content{background: none;}
 .Liber .items-list .item-description,.Liber .items-list .item-description2,.Liber .items input.armed,.Liber .items input.charged,.Liber .items input.autrequi,.Liber .items input.armurequi,.Liber .items input.bouclierqui,.Liber .talentliste,.Liber .faiblesseliste,.Liber .carac input[type="text"].talent,.Liber .carac input[type="text"].faiblesse,.Liber .tabs,.Liber a.item.Liber .stat input,.Liber .stat2 input,.Liber .features input,.Liber .head,.Liber header,.Liber h2  {background:#091a0a}/*titre #09141a*/
 .Liber a.active,.Liber a.item.active:hover,.Liber textarea,.Liber main,.Liber .head .rexrow{background:#1c3830;}/*font  #253745*/
-.Liber .autres{background:#1c3830 url(font.png) bottom right no-repeat;}
+.Liber .autres{background:#1c3830;}
 .Liber a.item:hover{background:#40675c;color:#fff;transition: 0.5s;}
 /*@font-face {font-family: "abnes";src: url('abnes.otf'); }*/
 .Liber.window-app .window-content{background-image: none;overflow:hidden }
